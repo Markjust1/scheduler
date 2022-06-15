@@ -8,15 +8,15 @@ const InterviewerListItem = (props) => {
   });
 
   return (
-    <li 
-      className={interviewer} 
-      onClick={() => {props.setInterviewer(props.id)}}>
+    <li
+      className={interviewer}
+      onClick={() => { props.setInterviewer(props.id) }}>
       <img
         className="interviewers__item-image"
         src={props.avatar}
         alt={props.name}
       />
-    {props.selected && props.name}
+      {props.selected && props.name}
     </li>
   )
 }
