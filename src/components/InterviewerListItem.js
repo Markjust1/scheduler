@@ -12,7 +12,6 @@ const InterviewerListItem = (props) => {
       className={interviewer}
       onClick={() => { 
         props.setInterviewer(props.id) 
-        console.log("props.id", props.id);
       }}>
 
       <img

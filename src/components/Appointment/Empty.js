@@ -13,4 +13,4 @@ const Empty = (props) => {
   )
 }
 
-export default Empty
+export default Empty;
