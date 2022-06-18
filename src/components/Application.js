@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios"
 import Appointment from "./Appointment";
 // import InterviewerList from "./InterviewerList";
-import { getAppointmentsForDay, getInterview } from '../helpers/selectors';
+import { getAppointmentsForDay, getInterview, getInterviewersForDay } from '../helpers/selectors';
 
 
 export default function Application() {
@@ -14,11 +14,15 @@ export default function Application() {
     appointments: {},
     interviewers: {}
   });
-  const dailyAppointments = getAppointmentsForDay(state, state.day);
 
+  const interviewers = getInterviewersForDay(state, state.day)
+  
+  const dailyAppointments = getAppointmentsForDay(state, state.day);
+  
+  
   const setDay = day => setState({ ...state, day });
   // const setDays = days => setState(prev => ({ ...prev, days }));
-
+  
   useEffect(() => {
     Promise.all([
       axios.get("/api/days"),
@@ -29,7 +33,7 @@ export default function Application() {
     }
     )
   }, []);
-
+  
   return (
     <main className="layout">
       <section className="sidebar">
@@ -62,6 +66,7 @@ export default function Application() {
             id={appointment.id}
             time={appointment.time}
             interview={interview}
+            interviewers={interviewers}
               // {...appointment}
             />
           )

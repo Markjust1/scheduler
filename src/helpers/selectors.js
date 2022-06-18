@@ -31,3 +31,21 @@ export function getInterview(state, interview) {
     })
   return returnObject;
 }
+
+export function getInterviewersForDay(state, day) {
+  if (state.days.length === 0) {
+    return [];
+  }
+  const filteredDays = state.days.find(elem => {
+    if (elem.name === day) {
+      return elem;
+    }
+  })
+  if (filteredDays === undefined) {
+    return [];
+  }
+  const filteredApps = filteredDays.interviewers.map((item) => {
+    return state.interviewers[item];
+  })
+  return filteredApps;
+}
