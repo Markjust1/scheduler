@@ -20,15 +20,8 @@ export function getInterview(state, interview) {
   if (interview === null) {
     return null;
   }
-
-  let returnObject = { interviewer: {}, student: {} };
-  let interviewers = Object.values(state.interviewers).forEach((person) => {
-    if (person.id === interview.interviewer) {
-      returnObject.interviewer = person;
-      returnObject.student = interview.student;
-    }
-  });
-  return returnObject;
+  const interviewer = state.interviewers[interview.interviewer];
+  return {...interview, interviewer};
 }
 
 export function getInterviewersForDay(state, day) {
