@@ -10,14 +10,28 @@ import {
 import useApplicationData from "hooks/useApplicationData";
 
 export default function Application() {
-
   const { state, setDay, bookInterview, cancelInterview } =
     useApplicationData();
-    
 
   const interviewers = getInterviewersForDay(state, state.day);
   const dailyAppointments = getAppointmentsForDay(state, state.day);
-  
+
+  const appointmentList = dailyAppointments.map((appointment) => {
+
+    const interview = getInterview(state, appointment.interview);
+
+    return (
+      <Appointment
+        key={appointment.id}
+        id={appointment.id}
+        time={appointment.time}
+        interview={interview}
+        interviewers={interviewers}
+        bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
+      />
+    );
+  });
 
   return (
     <main className="layout">
@@ -41,22 +55,8 @@ export default function Application() {
           alt="Lighthouse Labs"
         />
       </section>
-      <section className="schedule">
-        {dailyAppointments.map((appointment) => {
-          const interview = getInterview(state, appointment.interview);
-
-          return (
-            <Appointment
-              key={appointment.id}
-              id={appointment.id}
-              time={appointment.time}
-              interview={interview}
-              interviewers={interviewers}
-              bookInterview={bookInterview}
-              cancelInterview={cancelInterview}
-            />
-          );
-        })}
+      <section className="schedule">{appointmentList} 
+      <Appointment key="last" time="5pm"/>
       </section>
     </main>
   );

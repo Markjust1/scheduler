@@ -82,7 +82,7 @@ const Appointment = (props) => {
           onSave={save}
         />
       )}
-      {mode === SAVING && <Status />}
+      {mode === SAVING && <Status message="Saving..."/>}
       {mode === CONFIRM && (
         <Confirm
           message="Are you sure you wish to delete?"
@@ -90,7 +90,7 @@ const Appointment = (props) => {
           onConfirm={deleteInterview}
         />
       )}
-      {mode === DELETING && <Status />}
+      {mode === DELETING && <Status message="Deleting..."/>}
       {mode === EDIT && (
         <Form
           student={props.interview.student}

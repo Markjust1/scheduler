@@ -8,15 +8,15 @@ const Form = (props) => {
   const [error, setError] = useState("");
 
   function validate() {
-    if (student === '') {
+    if (student === "") {
       setError("Student name cannot be blank");
       return;
     }
-    // if (interviewer === null) {
-    //   setError("Please select an interviewer");
-    //   return;
-    // }
-    setError("")
+    if (interviewer === null) {
+      setError("Please select an interviewer");
+      return;
+    }
+    setError("");
     props.onSave(student, interviewer);
   }
 
@@ -30,10 +30,6 @@ const Form = (props) => {
     props.onCancel();
   };
 
-  // const save = () => {
-  //   props.onSave(student, interviewer);
-  // };
-
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
@@ -45,7 +41,7 @@ const Form = (props) => {
             data-testid="student-name-input"
             placeholder="Enter Student Name"
             value={student}
-            onChange={(event) => setStudent(event.target.value) }
+            onChange={(event) => setStudent(event.target.value)}
           />
         </form>
         <section className="appointment__validation">{error}</section>
