@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Status = (props) => {
   return (
@@ -10,7 +10,7 @@ const Status = (props) => {
       />
       <h1 className="text--semi-bold">{props.message}</h1>
     </main>
-  )
-}
+  );
+};
 
 export default Status;

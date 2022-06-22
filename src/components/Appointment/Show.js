@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Show = (props) => {
   return (
@@ -27,7 +27,7 @@ const Show = (props) => {
         </section>
       </section>
     </main>
-  )
-}
+  );
+};
 
 export default Show;
