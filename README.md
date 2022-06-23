@@ -47,10 +47,10 @@ npm start
 
 ## Setup database server
 
-```sh
+
 Clone the [scheduler-api](https://github.com/lighthouse-labs/scheduler-api) into a new directory.
 Follow the README.md instructions.
-```
+
 
 ## Running Jest Test Framework
 
