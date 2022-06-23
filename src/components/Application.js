@@ -12,8 +12,9 @@ import useApplicationData from "hooks/useApplicationData";
 export default function Application() {
   const { state, setDay, bookInterview, cancelInterview } =
     useApplicationData();
-
+// Selects interviewers for particular appointment
   const interviewers = getInterviewersForDay(state, state.day);
+// Shows appointments for particular day
   const dailyAppointments = getAppointmentsForDay(state, state.day);
 
   const appointmentList = dailyAppointments.map((appointment) => {
@@ -34,6 +35,7 @@ export default function Application() {
 
   return (
     <main className="layout">
+      {/* displaying the days */}
       <section className="sidebar">
         <img
           className="sidebar--centered"
@@ -54,6 +56,7 @@ export default function Application() {
           alt="Lighthouse Labs"
         />
       </section>
+      {/* list of appointments */}
       <section className="schedule">
         {appointmentList}
         <Appointment key="last" time="5pm" />
