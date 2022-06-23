@@ -7,25 +7,25 @@ Interview Scheduler is an application built with React that allows users to book
 ***
 Here we have the available days with corresponding appointments:
 
-!["Main page"](./public/images/days.gif)
+!["Main page"](./docs/days.gif)
 
 -----------------------------------------------------------------------------------
 
 If you want to create an appointment simply click on the available spot, type in your name and select an interviewer:
 
-!["Create appointment"](./public/images/create.gif)
+!["Create appointment"](./docs/create.gif)
 
 -----------------------------------------------------------------------------------
 
 If you want to edit your appointment, select your appointment and click on the "Edit" button:
 
-!["Edit appointment"]("./public/images/edit.gif)
+!["Edit appointment"]("./docs/edit.gif)
 
 -----------------------------------------------------------------------------------
 
 If you want to cancel your appointment, select your appointment and click on the "Delete" button:
 
-!["Delete appointment"]("./public/images/delete.gif)
+!["Delete appointment"]("./docs/delete.gif)
 
 -----------------------------------------------------------------------------------
 
@@ -48,7 +48,7 @@ npm start
 ## Setup database server
 
 ```sh
-Clone the scheduler-api into a new directory.
+Clone the [scheduler-api](https://github.com/lighthouse-labs/scheduler-api) into a new directory.
 Follow the README.md instructions.
 ```
 
